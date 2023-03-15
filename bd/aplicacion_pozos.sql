@@ -1,6 +1,31 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 15, 2023 at 01:50 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `aplicacion_pozos`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mediciones`
+--
 
 CREATE TABLE `mediciones` (
   `medicionID` int(11) NOT NULL,
@@ -9,51 +34,62 @@ CREATE TABLE `mediciones` (
   `pozoID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-INSERT INTO `mediciones` (`medicionID`, `medicion`, `fecha`, `pozoID`) VALUES
-(8, 500.22, '2022-02-28', 1),
-(10, 360.54, '2021-12-17', 1),
-(11, 400.50, '2022-03-10', 1),
-(12, 600.64, '2021-12-02', 8),
-(13, 300.00, '2022-03-01', 8),
-(14, 700.20, '2022-03-25', 8);
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pozos`
+--
 
 CREATE TABLE `pozos` (
   `pozoID` int(11) NOT NULL,
-  `nombrePozo` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `extension` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL
+  `nombrePozo` varchar(40) DEFAULT NULL,
+  `extension` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Dumping data for table `pozos`
+--
 
 INSERT INTO `pozos` (`pozoID`, `nombrePozo`, `extension`) VALUES
-(1, 'CUENCA MARACAIBO - FALCÓN', '67.000Km2'),
-(8, 'CUENCA ORIENTAL', '153.000km2')
+(1, 'Cuenca Oriental', '153000'),
+(2, 'Cuenca Maracaibo - Falcón', '67000'),
+(3, 'Cuenca Barinas - Apure', '87000'),
+(4, 'Cuenca Tuy - Cariaco', '14000');
 
-CREATE TABLE `usuario` (
-  `usuarioID` int(11) NOT NULL,
-  `nombreUsuario` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `password` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+--
+-- Indexes for dumped tables
+--
 
-INSERT INTO `usuario` (`usuarioID`, `nombreUsuario`, `password`) VALUES
-(2, 'andrea21', 'ec6a6536ca304edf844d1d248a4f08dc'),
-(11, 'user', '827ccb0eea8a706c4c34a16891f84e7b');
-
+--
+-- Indexes for table `mediciones`
+--
 ALTER TABLE `mediciones`
   ADD PRIMARY KEY (`medicionID`);
 
+--
+-- Indexes for table `pozos`
+--
 ALTER TABLE `pozos`
   ADD PRIMARY KEY (`pozoID`),
   ADD UNIQUE KEY `nombrePozo` (`nombrePozo`);
 
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`usuarioID`),
-  ADD UNIQUE KEY `nombreUsuario` (`nombreUsuario`);
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
+--
+-- AUTO_INCREMENT for table `mediciones`
+--
 ALTER TABLE `mediciones`
-  MODIFY `medicionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `medicionID` int(11) NOT NULL AUTO_INCREMENT;
 
+--
+-- AUTO_INCREMENT for table `pozos`
+--
 ALTER TABLE `pozos`
-  MODIFY `pozoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
-ALTER TABLE `usuario`
-  MODIFY `usuarioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `pozoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
