@@ -1,0 +1,109 @@
+@import url('https://fonts.cdnfonts.com/css/cartogothic-std');
+@import url('https://fonts.cdnfonts.com/css/noto-sans-modi');
+
+* {
+    /* font-family: 'CartoGothic Std', sans-serif; */
+    font-family: 'Noto Sans Modi', sans-serif;
+    background-color: #fafafa;
+}
+
+html {
+    height: 100%;
+}
+
+h2{
+    color: #d6141a !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input{
+    background-color: #eeeeee; 
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+    vertical-align: middle;
+}
+
+input:hover{
+    background-color: #eeeeee; 
+}
+
+input:focus{
+    background-color: #e7e8e8; 
+    outline: none;
+}
+
+#i-opc{
+    color: #A4A6B1; 
+    font-size: 25px; 
+    padding: 0px 5px 0px 5px;
+    transition: all 0.2s ease-out;
+    background-color: transparent !important;
+}
+
+#i-opc:hover{
+    color: #343435;
+    transition: all 0.2s ease-in;
+}
+
+.div-boton, h1, h2{
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    align-items: center !important;
+}
+
+.boton-verde{
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #34c631;
+    margin: 0px 25px 0px 25px;
+    padding: 10px 25px 5px 25px;
+    border: none;
+    border-radius: 20px;
+    width: 35%;
+}
+
+.boton-verde:hover{
+    color: #3ea23d !important;
+    background-color: #E2EFE2;
+    color: #000000;
+}
+
+.boton-verde:active{
+    background-color: #45ab43;
+    color: #ffffff !important;
+}
+
+.boton-rojo{
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #d12a2a;
+    margin: 0px 25px 0px 25px;
+    padding: 10px 25px 5px 25px;
+    border: none;
+    border-radius: 20px;
+    width: 35%;
+}
+
+.boton-rojo:hover{
+    color: #9b3030 !important;
+    background-color: #efe2e2;
+    color: #000000;
+}
+
+.boton-rojo:active{
+    background-color: #d85050;
+    color: #ffffff !important;
+}
